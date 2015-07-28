@@ -1,0 +1,48 @@
+<!-- 2. The Basics - Lesson 5 Events 201 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charest=UTF-8 />
+	<title>jQuery Events 201</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<dl>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+</dl>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+<script>
+	
+(function() {
+	var dd = $('dd');
+	dd.filter(':nth-child(n+4)').addClass('hide');
+
+	$('dl').on('mouseenter', 'dt', function() {
+		$(this)
+			.next()
+				.slideDown(200)
+				.siblings('dd')
+					.slideUp(200);
+	});
+	// dd.hide();
+	// dd.show();
+	// dd.fadeIn();
+	// dd.slideDown();
+})();
+
+</script> 
+
+</body>
+</html>

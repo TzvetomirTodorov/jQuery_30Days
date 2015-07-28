@@ -1,0 +1,39 @@
+<!-- 3. Effects - Lesson 3 Modifying Effect Speeds -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+
+	</style>
+</head>
+<body>
+
+<h1>Reveal</h1>
+
+<div class="content">
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolorem accusamus odit deleniti animi ipsam mollitia est sunt. Optio error magnam laboriosam deleniti, corrupti adipisci molestiae dolor autem obcaecati quas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora adipisci pariatur, ullam veritatis nihil culpa, quidem ipsam modi error eaque impedit tenetur cupiditate repellat at animi fugit sed! Minima, explicabo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dicta nesciunt amet quisquam ipsa cupiditate, voluptate similique quo
+		s nisi possimus sunt maxime ea excepturi obcaecati minima qui enim, perferendis ut.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolorem accusamus odit deleniti animi ipsam mollitia est sunt. Optio error magnam laboriosam deleniti, corrupti adipisci molestiae dolor autem obcaecati quas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora adipisci pariatur, ullam veritatis nihil culpa, quidem ipsam modi error eaque impedit tenetur cupiditate repellat at animi fugit sed! Minima, explicabo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dicta nesciunt amet quisquam ipsa cupiditate, voluptate similique quos nisi possimus sunt maxime ea excepturi obcaecati minima qui enim, perferendis ut
+	</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+<script>
+	
+	$('div.content').hide();
+
+	$.fx.speeds._tortoise = 5000;
+
+	$('h1').on('click', function() {
+		$(this).next().slideDown('_tortoise');
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- 2. The Basics, Day 3 The Basics of Querying the DOM -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset= "UTF-8" />
+	<title></title>
+	<style>
+		li {color: black;}
+		.container {color: green;}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<h1>Welcome to My Website</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat amet provident illum dolor quaerat, corrupti ut dignissimos praesentium sed laudantium, quisquam impedit assumenda! Dolorem facere consequatur dolore repellendus vitae quis.
+		</p>
+			
+			<div class="container">
+			<ul class="emphasis container">
+				<li>item</li>
+				<li>item 2</li>
+				<li>item 3</li>
+				<li>item 4</li>
+				<li>item 5</li>
+				<li>
+					<ul>
+						<li>hello	from the nest.</li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script> 
+
+<script>
+	// $('ul.emphasis')
+	// 	.children('li')
+	// 		.eq(3).prev()
+	// 			.text('added with jQuery')
+	console.log($('ul').parents('.container'));
+	console.log($('ul').closest('.container'));
+</script>
+
+</body>
+</html>

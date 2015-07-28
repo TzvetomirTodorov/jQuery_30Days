@@ -1,0 +1,71 @@
+<!-- 2. The Basics - Lesson 7 Creating and Appending Content -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Appending Content</title>
+	<style>
+		article {
+			width: 600px;
+			margin: auto;
+		}	
+		blockquote.co {
+			float: right;
+			background: #e3e3e3;
+			font-size: 2em;
+			width: 35%;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<article>
+	<h1>My Awesome Post</h1>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione libero nihil consequatur sapiente aut. Alias enim assumenda, maxime officia nostrum cumque illo dicta est odio, minima nihil. Voluptate, minima non.
+	</p>
+	<p>
+		<span class=co>Hello from JavaScript.</span>, consectetur adipisicing elit. Iusto doloremque error minima, sunt repellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione libero nihil consequatur sapiente aut. Alias enim assumenda, maxime officia nostrum cumque illo dicta est odio, minima nihil. Voluptate, minima non.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione libero nihil consequatur sapiente aut. Alias enim assumenda, maxime officia nostrum cumque illo dicta est odio, minima nihil. Voluptate, minima non.
+	</p>
+	<p>
+		Consectetur adipisicing elit. Iusto doloremque error minima, sunt repellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque<span class=co>Hello from JavaScript.</span> laudantium dolorum ea, quisquam voluptatum,epellendus vitae optio nesciunt beatae nulla cupiditate excepturi ipsa ipsum ullam eaque laudantium dolorum ea, quisquam voluptatum.
+	</p>
+</article>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+<script>
+
+(function() {
+
+	var co = $('article').find('span.co').each(function() {
+		var $this = $(this);
+		
+		$('<blockquote></blockquote>', {
+			class:'co',
+			text: $this.text()
+		}).prependTo($this.closest('p') );
+
+	});
+	// $('p').eq(0).after(function() {
+	// 	return $(this).prev();
+	// });
+	// $('h1').appendTo('article')
+	// $('<h2></h2>', {
+	// 	text: 'Hello from Javascript',
+	// 	class: 'myClass',
+	// }).insertBefore('p:nth-child(3)');
+
+})();
+
+</script>
+
+</body>
+</html>

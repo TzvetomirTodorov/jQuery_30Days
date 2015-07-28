@@ -1,0 +1,30 @@
+<!-- 2. The Basics - Lesson 6 Events Bind...Live...Delegate...Huh? -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bind...Live...Delegate...On...Dang That's Confusing</title>
+</head>
+<body>
+
+<div class="container">
+	<h2>Click Me</h2>
+	<h2>Click Me</h2>
+	<h2>Click Me</h2>
+	<h2>Click Me</h2>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+<script>
+(function() {
+	
+	$('div.container').delegate('h2', 'click', function() {
+		console.log('clicked');
+		$(this).clone().appendTo('div.container');
+	});
+
+})();
+</script>
+
+</body>
+</html>
