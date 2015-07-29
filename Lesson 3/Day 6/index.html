@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+	<title>Animate</title>
+	<style>
+
+		body { width: 400px; margin: 100px auto;}
+		
+		.box {
+			width: 400px;
+			background: red;
+			position: relative;
+			overflow: hidden;
+			padding: 1em;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="box">
+	<h2>Hi There</h2>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus sunt laboriosam expedita, ab nesciunt nostrum! Officiis id non quas molestias at sint rem totam reiciendis, laudantium corporis doloremque nam aliquam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, magni nam id odio officia nisi repellendus impedit perferendis ullam, numquam, illum sequi incidunt enim eveniet sint modi esse ipsum aut.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nisi dolor similique, est ad et fugit distinctio aperiam, consectetur corrupti minima, ipsum libero. Soluta officiis dolorem consequuntur ducimus aliquid animi!
+	</p>
+</div>
+
+<p><button>FadeSlideToggle</button></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+<script>
+
+$().slideDown(500, function(){
+
+});
+	
+(function () {
+	var box = $('div.box');
+
+	$.fn.FadeSlideToggle = function(speed, fn) {
+		// fadeToggle = opacity is adjusted
+		// slideToggle = height is adjusted
+		
+		// if ($.isFunction(fn)) {
+		// 	console.log('Is a function.');
+		// }
+		// else {
+		// 	console.log('Nein. Undefined.')
+		// }
+
+		// console.log(fn);
+		return $(this). animate({
+			'height': 'toggle',
+			opacity: 'toggle'
+		}, speed || 400, function() {
+			$.isFunction(fn) && fn.call(this);
+		});
+	};
+
+	$('button').on('click', function() {
+		// box.FadeSlideToggle(500);
+		box.FadeSlideToggle(500, function() {
+			console.log('Hola. I am a function.');
+		});
+	});
+
+})();
+
+
+</script>
+
+</body>
+</html>
