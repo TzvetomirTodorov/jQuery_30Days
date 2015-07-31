@@ -24,12 +24,29 @@
 </div>
 
 <div id="slider-nav">
-	<button data-dir="prev">Previous</button>
+	<button data-dir="prev">Previous</butt*on>
 	<button data-dir="next">Next</button>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
 <script src="slider.js"></script>
+
+<script>
+
+(function() {
+
+	var container = $('div.slider').css('overflow', 'hidden').children('ul'),
+			slider = new Slider( container, $('#slider-nav') );
+
+	slider.nav.find('button').on('click', function() {
+		slider.setCoordinates( $(this).data('dir') );
+		slider.transition();
+	});
+
+})();
+
+</script>
 
 </body>
 </html>
